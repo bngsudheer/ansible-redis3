@@ -26,8 +26,9 @@ Example Playbook
 ----------------
 
     - hosts: servers
+      remote_user: root
       roles:
-         - { role: bngsudheer.ansible-redis3, increase_limits: yes}
+         - { role: bngsudheer.redis3, increase_limits: yes}
 
 License
 -------

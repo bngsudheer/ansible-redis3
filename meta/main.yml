@@ -5,12 +5,11 @@ galaxy_info:
   company: Gavika Information Technologies Pvt. Ltd.
   license: license (BSD)
   min_ansible_version: 1.2
-  #
-  #platforms:
+  platforms:
   - name: EL
     versions:
      - 7
   categories:
     - database
     - database:nosql
-dependencies: []
+  dependencies: []

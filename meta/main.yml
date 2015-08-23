@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Sudheer Satyanarayana
+  description: 
+  company: Gavika Information Technologies Pvt. Ltd.
+  license: license (BSD)
+  min_ansible_version: 1.2
+  #
+  #platforms:
+  - name: EL
+    versions:
+     - 7
+  categories:
+    - database
+    - database:nosql
+dependencies: []

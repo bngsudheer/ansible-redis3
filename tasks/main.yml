@@ -1,0 +1,21 @@
+---
+# tasks file for ansible-redis3
+ - name: get redis 3
+   get_url: url=http://download.redis.io/releases/redis-3.0.2.tar.gz dest='/usr/src'
+
+ - name: unpack redis 3
+   unarchive: dest=/usr/src/ src=/usr/src/redis-3.0.2.tar.gz copy=no
+
+ - name: compile and install redis
+   action: shell chdir=/usr/src/redis-3.0.2 {{ item }}
+   with_items:
+    - make
+    - make install
+
+ - name: increase the limits - redis 
+   action: lineinfile dest=/etc/security/limits.conf state=present line="{{ item }}"
+   with_items:
+    - "redis soft nofile 20480" 
+    - "redis hard nofile 20480"
+   when:
+       increase_limits
